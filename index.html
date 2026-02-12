@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RED PILL | Elite Web3 Growth Partner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;700&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* FOUT Fix: Hide body until fonts are loaded or fallback quickly */
+        html { visibility: visible; opacity: 1; }
+        
+        /* Font loading optimization */
+        .wf-loading body {
+            visibility: hidden;
+        }
+        /* CRITICAL: Keep loading screen visible even when body is hidden */
+        .wf-loading body #loading-screen {
+            visibility: visible;
+            opacity: 1;
+        }
+        .wf-active body, .wf-inactive body {
+            visibility: visible;
+        }
+    </style>
+    <script>
+        // Simple font loader check to prevent FOUT
+        document.documentElement.classList.add('wf-loading');
+        window.addEventListener('load', function() {
+            document.documentElement.classList.remove('wf-loading');
+            document.documentElement.classList.add('wf-active');
+        });
+        // Fallback safety
+        setTimeout(function() {
+            document.documentElement.classList.remove('wf-loading');
+            document.documentElement.classList.add('wf-inactive');
+        }, 1500);
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="LABS.png">
+    <link rel="shortcut icon" type="image/png" href="LABS.png">
+    <link rel="apple-touch-icon" href="LABS.png">
+</head>
+<body>
+
+    <!-- ========= LOADING SCREEN ========= -->
+    <div id="loading-screen">
+        <div class="loader-content">
+            <img src="LABS.png" alt="Loading..." class="loader-logo">
+        </div>
+    </div>
+
+    <!-- ========= HEADER ========= -->
+    <header class="app-header">
+        <div class="container header-content">
+            <a href="#" class="brand-logo">
+                <img src="LABS.png" alt="Red Pill Labs Logo" class="header-logo-img">
+                Red Pill Labs
+            </a>
+            <nav class="desktop-nav">
+                <a href="#services">Services</a>
+                <a href="#ecosystem">Ecosystem</a>
+                <a href="#plans">Plans</a>
+                <a href="#team">Team</a>
+                <a href="#results">Track Record</a>
+            </nav>
+            <div class="header-right">
+                <a href="#vision" class="btn btn-primary">Start Growth</a>
+                <button id="mobile-menu-btn" class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========= MOBILE MENU ========= -->
+    <div id="mobile-menu" class="mobile-menu">
+        <button id="close-menu-btn" class="close-menu-btn"><i class="fas fa-times"></i></button>
+        <nav>
+            <a href="#services" class="mobile-link">Services</a>
+            <a href="#ecosystem" class="mobile-link">Ecosystem</a>
+            <a href="#plans" class="mobile-link">Plans</a>
+            <a href="#results" class="mobile-link">Track Record</a>
+            <a href="#contact" class="mobile-link highlight">Start Growth</a>
+        </nav>
+    </div>
+
+    <main>
+        <!-- ========= HERO SECTION (AP STYLE - BOLD & CLEAN) ========= -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-text-area">
+                        <h1 class="hero-title">WE SCALE <br><span class="text-red">WEB3 GIANTS.</span></h1>
+                        <p class="hero-subtitle">
+                            Strategic growth. Viral narratives. Community cults. 
+                            We transform projects into market leaders through surgical marketing execution.
+                        </p>
+                        <div class="hero-stats">
+                            <div class="stat-box">
+                                <span class="stat-num">500+</span>
+                                <span class="stat-desc">CAMPAIGNS</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-num">$50M+</span>
+                                <span class="stat-desc">VALUE GENERATED</span>
+                            </div>
+                        </div>
+                        <div class="hero-cta">
+                            <a href="#vision" class="btn btn-primary btn-large">Contact Us <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- HERO VIDEO CONTAINER -->
+                    <div class="hero-video-wrapper">
+                        <div class="video-container">
+                            <!-- Placeholder for video or actual video tag -->
+                            <video autoplay muted loop playsinline poster="https://placehold.co/600x400/1a1a1a/333333?text=Hero+Video">
+                                <source src="#" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="video-overlay"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========= CLIENTS / ECOSYSTEM (MARQUEE) ========= -->
+        <section id="ecosystem" class="ecosystem-section">
+            <div class="marquee-wrapper">
+                <div class="marquee-content">
+                    <!-- Set 1 -->
+                    <span class="marquee-item crypto-eth"><i class="fab fa-ethereum"></i> ETHEREUM</span>
+                    <span class="marquee-item crypto-mega"><img src="logoM.jpg" alt="MegaETH" class="crypto-icon" style="border-radius: 50%;"> MEGA ETH</span>
+                    <span class="marquee-item crypto-btc"><i class="fab fa-bitcoin"></i> BITCOIN</span>
+                    <span class="marquee-item crypto-sol"><img src="https://cryptologos.cc/logos/solana-sol-logo.png?v=026" alt="Solana" class="crypto-icon"> SOLANA</span>
+                    <span class="marquee-item crypto-matic"><img src="https://cryptologos.cc/logos/polygon-matic-logo.png?v=026" alt="Polygon" class="crypto-icon"> POLYGON</span>
+                    <span class="marquee-item crypto-avax"><img src="https://cryptologos.cc/logos/avalanche-avax-logo.png?v=026" alt="Avalanche" class="crypto-icon"> AVALANCHE</span>
+                    <span class="marquee-item crypto-arb"><img src="https://cryptologos.cc/logos/arbitrum-arb-logo.png?v=026" alt="Arbitrum" class="crypto-icon"> ARBITRUM</span>
+                    <span class="marquee-item crypto-bnb"><img src="https://cryptologos.cc/logos/bnb-bnb-logo.png?v=026" alt="BNB" class="crypto-icon"> BINANCE</span>
+                    
+                    <!-- Set 2 (Duplicate for infinite scroll) -->
+                    <span class="marquee-item crypto-eth"><i class="fab fa-ethereum"></i> ETHEREUM</span>
+                    <span class="marquee-item crypto-mega"><img src="logoM.jpg" alt="MegaETH" class="crypto-icon" style="border-radius: 50%;"> MEGA ETH</span>
+                    <span class="marquee-item crypto-btc"><i class="fab fa-bitcoin"></i> BITCOIN</span>
+                    <span class="marquee-item crypto-sol"><img src="https://cryptologos.cc/logos/solana-sol-logo.png?v=026" alt="Solana" class="crypto-icon"> SOLANA</span>
+                    <span class="marquee-item crypto-matic"><img src="https://cryptologos.cc/logos/polygon-matic-logo.png?v=026" alt="Polygon" class="crypto-icon"> POLYGON</span>
+                    <span class="marquee-item crypto-avax"><img src="https://cryptologos.cc/logos/avalanche-avax-logo.png?v=026" alt="Avalanche" class="crypto-icon"> AVALANCHE</span>
+                    <span class="marquee-item crypto-arb"><img src="https://cryptologos.cc/logos/arbitrum-arb-logo.png?v=026" alt="Arbitrum" class="crypto-icon"> ARBITRUM</span>
+                    <span class="marquee-item crypto-bnb"><img src="https://cryptologos.cc/logos/bnb-bnb-logo.png?v=026" alt="BNB" class="crypto-icon"> BINANCE</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========= SERVICES (AP STYLE - GRID & HOVER) ========= -->
+        <section id="services" class="services-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>OUR GROWTH ARSENAL</h2>
+                    <p>End-to-end solutions for blockchain dominance.</p>
+                </div>
+
+                <div class="services-grid">
+                    <!-- Service 1 -->
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-users"></i></div>
+                        <h3>Community Growth</h3>
+                        <p>We attract, retain, and engage Web3 community members, driving meaningful growth and lasting brand loyalty.</p>
+                        <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <!-- Service 2 -->
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-bullhorn"></i></div>
+                        <h3>Influencer Marketing</h3>
+                        <p>Targeted KOL campaigns that amplify visibility and credibility across the crypto ecosystem.</p>
+                        <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <!-- Service 3 -->
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-handshake"></i></div>
+                        <h3>Strategic Partnerships</h3>
+                        <p>We establish strategic blockchain partnerships aligned with your project's long-term growth objectives.</p>
+                        <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <!-- Service 4 -->
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
+                        <h3>Web3 Branding</h3>
+                        <p>Impactful visual identities tailored specifically for Web3, positioning you clearly in your market.</p>
+                        <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <!-- Service 5 -->
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-rocket"></i></div>
+                        <h3>Advisory & Strategy</h3>
+                        <p>Navigate the complexities of blockchain marketing with our expert strategic guidance.</p>
+                        <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <!-- Service 6 -->
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-code"></i></div>
+                        <h3>Development</h3>
+                        <p>Technical expertise to build, launch, and scale dApps, NFT platforms, and token ecosystems.</p>
+                        <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========= GET A DEMO (NEW) ========= -->
+        <section class="demo-section">
+            <div class="container">
+                <div class="demo-card">
+                    <h2>See Red Pill in Action</h2>
+                    <p>Not ready to commit? Get a personalized walkthrough of our growth systems and see exactly how we can scale your project.</p>
+                    
+                    <div class="demo-features">
+                        <div class="demo-feature-item"><i class="fas fa-chart-pie"></i> Live Case Studies</div>
+                        <div class="demo-feature-item"><i class="fas fa-cogs"></i> System Walkthrough</div>
+                        <div class="demo-feature-item"><i class="fas fa-lightbulb"></i> Custom Strategy</div>
+                    </div>
+
+                    <a href="#contact" class="btn btn-primary btn-large btn-pulse">Get a Free Demo</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========= OUR PLANS (NEW) ========= -->
+        <section id="plans" class="plans-section">
+            <div class="container">
+                <div class="section-header center-text">
+                    <h2>CHOOSE YOUR PATH</h2>
+                    <p>Tailored packages for every stage of growth.</p>
+                </div>
+                
+                <div class="plans-grid">
+                    <!-- PLAN 1: BUILDER PACK -->
+                    <div class="plan-card">
+                        <div class="plan-header">
+                            <h3>BUILDER PACK</h3>
+                            <p>For New Launches</p>
+                        </div>
+                        <ul class="plan-features">
+                            <li><i class="fas fa-check-circle"></i> Project Creation: Full conceptualization and initial setup.</li>
+                            <li><i class="fas fa-check-circle"></i> Project Launch: End-to-end execution of the market entry.</li>
+                            <li><i class="fas fa-check-circle"></i> Alpha Landing Page: Design and deployment of the initial web presence.</li>
+                            <li><i class="fas fa-check-circle"></i> Team Assignment: Dedicated staff allocation (Mods, Admins, Designers, etc.).</li>
+                            <li><i class="fas fa-check-circle"></i> Discord Setup: Comprehensive server architecture and configuration.</li>
+                            <li><i class="fas fa-check-circle"></i> 24/7 Advisory: Round-the-clock expert consultancy and support.</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-primary btn-full btn-pulse">Get for $1,850</a>
+                    </div>
+
+                    <!-- PLAN 2: OG PACK -->
+                    <div class="plan-card og-pack">
+                        <div class="plan-header">
+                            <h3>OG PACK</h3>
+                            <p>For Market Domination</p>
+                        </div>
+                        <ul class="plan-features">
+                            <li><i class="fas fa-check-circle"></i> Project Creation: Comprehensive conceptualization and strategic setup.</li>
+                            <li><i class="fas fa-check-circle"></i> Professional 3D Landing Page: High-end web design with 3D elements and immersive UI.</li>
+                            <li><i class="fas fa-check-circle"></i> Team Assignment: Dedicated staff allocation (Mods, Admins, Designers, etc.).</li>
+                            <li><i class="fas fa-check-circle"></i> Discord Setup: Advanced server architecture, security, and bot configuration.</li>
+                            <li><i class="fas fa-check-circle"></i> Full Social Media Marketing: Short-form video strategy (Shorts/Reels/TikTok) across Instagram, TikTok, and YouTube.</li>
+                            <li><i class="fas fa-check-circle"></i> Custom Mascot Marketing: Creation and promotion of high-quality YouTube videos featuring a specialized pixel-art mascot.</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-primary btn-full btn-pulse">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========= VISION SECTION (NEW) ========= -->
+        <section id="vision" class="vision-section" style="padding: 100px 0; background: #fcfcfc; border-top: 1px solid #e5e5e5; text-align: center;">
+            <div class="container">
+                <div class="section-header" style="margin-bottom: 0;">
+                    <h2 style="font-size: 4rem; line-height: 1.1; margin-bottom: 20px;">MAKING YOUR VISION A REALITY</h2>
+                    <p style="font-size: 1.5rem; max-width: 800px; margin: 0 auto; color: #333;">Speed, quality, and support Non-negotiable. <br> <span style="color: #8ACF59; font-weight: 700;">Let’s win together.</span></p>
+                    
+                    <div class="vision-buttons" style="margin-top: 40px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                        <a href="https://t.me/xswandx5" target="_blank" class="btn btn-vision">
+                            <i class="fab fa-telegram-plane"></i> Telegram
+                        </a>
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=redpilllabscontact@gmail.com" target="_blank" class="btn btn-vision">
+                            <i class="fas fa-envelope"></i> Email
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========= TEAM SECTION (NEW) ========= -->
+        <section id="team" class="team-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>THE OPERATORS</h2>
+                    <p>15+ Specialists Driving Crypto, DeFi & NFT Growth.</p>
+                </div>
+                <div class="team-grid">
+                    <!-- Member 1 -->
+                    <div class="team-card">
+                        <div class="member-image">
+                            <img src="maurophp.png" alt="CEO">
+                        </div>
+                        <div class="member-info">
+                            <h3>xSwap</h3>
+                            <span class="member-role">Chief Executive Officer (CEO)</span>
+                        </div>
+                    </div>
+                    <!-- Member 2 -->
+                    <div class="team-card">
+                        <div class="member-image">
+                            <img src="negrophp.png" alt="COO">
+                        </div>
+                        <div class="member-info">
+                            <h3>Wknez</h3>
+                            <span class="member-role">Chief Marketing Officer (CMO)</span>
+                        </div>
+                    </div>
+                    <!-- Member 3 -->
+                    <div class="team-card">
+                        <div class="member-image">
+                            <img src="ryanphp.png" alt="CMO">
+                        </div>
+                        <div class="member-info">
+                            <h3>ryan Σ:</h3>
+                            <span class="member-role">Chief Operating Officer (COO)</span>
+                        </div>
+                    </div>
+                    <!-- Member 4 -->
+                    <div class="team-card">
+                        <div class="member-image">
+                            <img src="danphp.png" alt="Dev Lead">
+                        </div>
+                        <div class="member-info">
+                            <h3>Dan</h3>
+                            <span class="member-role">Chief Technology Officer (CTO)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========= IMPACT METRICS (STATS) ========= -->
+        <section id="results" class="metrics-section">
+            <div class="container">
+                <div class="section-header center-text">
+                    <h2>OUR IMPACT</h2>
+                    <p>Numbers don't lie. We deliver measurable growth.</p>
+                </div>
+                <div class="metrics-grid">
+                    <!-- Stat 1 -->
+                    <div class="metric-card">
+                        <div class="metric-icon"><i class="fas fa-chart-line"></i></div>
+                        <span class="metric-value">$500M+</span>
+                        <span class="metric-label">TOTAL VALUE LOCKED GENERATED</span>
+                    </div>
+                    <!-- Stat 2 -->
+                    <div class="metric-card">
+                        <div class="metric-icon"><i class="fas fa-users"></i></div>
+                        <span class="metric-value">2.5M+</span>
+                        <span class="metric-label">COMMUNITY MEMBERS ONBOARDED</span>
+                    </div>
+                    <!-- Stat 3 -->
+                    <div class="metric-card">
+                        <div class="metric-icon"><i class="fas fa-handshake"></i></div>
+                        <span class="metric-value">150+</span>
+                        <span class="metric-label">STRATEGIC PARTNERSHIPS CLOSED</span>
+                    </div>
+                    <!-- Stat 4 -->
+                    <div class="metric-card">
+                        <div class="metric-icon"><i class="fas fa-bullseye"></i></div>
+                        <span class="metric-value">50+</span>
+                        <span class="metric-label">SUCCESSFUL TGE LAUNCHES</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========= CONTACT CTA (SCHEDULE CALL) ========= -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <div class="contact-wrapper">
+                    <div class="contact-text">
+                        <h2>Book Your Strategy Session</h2>
+                        <p>Schedule a time with our team to discuss your project's growth.</p>
+                        <div style="margin-top: 30px; padding: 20px; background: rgba(138, 207, 89, 0.1); border-left: 4px solid #8ACF59; border-radius: 4px;">
+                            <p style="font-size: 0.95rem; margin: 0; color: #555;"><i class="fas fa-info-circle" style="color: #8ACF59; margin-right: 8px;"></i> After submitting, you will be redirected to our Telegram for immediate confirmation.</p>
+                        </div>
+                    </div>
+                    <form id="booking-form" class="contact-form">
+                        <div class="form-group">
+                            <label for="name" style="display: block; margin-bottom: 8px; font-weight: 600; color: #333;">Full Name</label>
+                            <input type="text" id="name" name="name" placeholder="John Doe" required>
+                        </div>
+                        
+                        <!-- NEW PREFERENCE SELECTION -->
+                        <div class="form-group">
+                            <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #333;">Preferred Communication</label>
+                            <div class="radio-group" style="display: flex; gap: 20px;">
+                                <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-weight: 500;">
+                                    <input type="radio" name="preference" value="call" checked style="accent-color: #8ACF59;">
+                                    <i class="fas fa-phone-alt" style="color: #555; transform: scaleX(-1);"></i> Call
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-weight: 500;">
+                                    <input type="radio" name="preference" value="message" style="accent-color: #8ACF59;">
+                                    <i class="fas fa-comment-dots" style="color: #555;"></i> Message
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <div class="form-group">
+                                <label for="date" style="display: block; margin-bottom: 8px; font-weight: 600; color: #333;">Preferred Date</label>
+                                <input type="date" id="date" name="date" required style="cursor: pointer;">
+                            </div>
+                            <div class="form-group">
+                                <label for="time" style="display: block; margin-bottom: 8px; font-weight: 600; color: #333;">Preferred Time</label>
+                                <input type="time" id="time" name="time" required style="cursor: pointer;">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="project" style="display: block; margin-bottom: 8px; font-weight: 600; color: #333;">Project Name / Website</label>
+                            <input type="text" id="project" name="project" placeholder="My Project" required>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-full">Schedule Strategy <i class="fab fa-telegram-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-col">
+                <a href="#" class="brand-logo small">RED PILL LABS.</a>
+                <p>&copy; 2025 Red Pill Agency.</p>
+            </div>
+            <div class="footer-col links">
+                <a href="#">Services</a>
+                <a href="#">Case Studies</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="footer-col links social-icons-only">
+                <a href="https://www.youtube.com/@RedPillMethod" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://x.com/redpilllabs_?s=11" target="_blank" aria-label="X (Twitter)"><i class="fab fa-twitter"></i></a>
+                <a href="https://t.me/cryptoredpillmethod" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+                <a href="https://www.instagram.com/cryptoredpillz?igsh=MTdzY3dzaWl2dGFndg%3D%3D&utm_source=qr" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
