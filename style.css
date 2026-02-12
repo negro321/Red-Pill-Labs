@@ -508,126 +508,89 @@ h1, h2, h3 {
 }
 
 /* =========================================
-   CHOICE SECTION
+   CHOICE SECTION (NEW)
    ========================================= */
 .choice-section {
-    padding: 120px 0;
-    border-bottom: 1px solid var(--border-color);
-    background: transparent;
-}
-
-.center-text {
-    text-align: center;
-}
-
-.center-text p {
-    margin: 0 auto;
+    padding: 100px 0;
+    background: #f8f9fa; /* Slight grey contrast */
+    border-top: 1px solid var(--border-color);
 }
 
 .choice-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
-    max-width: 1000px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
 .choice-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    padding: 50px 40px;
+    background: #0F1115; /* Dark Card */
+    border-radius: 12px;
+    padding: 60px 40px;
     text-align: center;
-    border-radius: 8px;
-    transition: var(--transition);
-    color: var(--text-white);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
 }
 
 .choice-card:hover {
     transform: translateY(-10px);
-}
-
-.blue-pill:hover {
-    border-color: #0088ff;
-    box-shadow: 0 10px 30px rgba(0, 136, 255, 0.1);
-}
-
-.red-pill {
-    /* For "Green" theme, Red Pill is still metaphorically "Red Pill", 
-       but we can tint it green if user wants total theme shift. 
-       However, "Red Pill" is the name. I will keep Red accents for the PILL itself 
-       but maybe fit the Green theme? 
-       Actually, "Red Pill Labs" implies Red. 
-       But user asked: "mezcla entre color blanco, el tono de color verde del logo y negro".
-       If logo is Green, maybe the name is Red Pill but logo is Green? 
-       I will stick to the requested Green for the main accent (var(--primary-red)).
-       Wait, if I change var(--primary-red) to Green, then .red-pill becomes Green Pill.
-       I should probably keep the pill Red specifically, or change it to Green if that's the "brand".
-       "Red Pill" with a Green logo is contradictory but I must follow "Green tone of logo".
-       I will use the Green Variable for the "Red Pill" card to match the new brand color.
-    */
-    background: linear-gradient(180deg, rgba(0, 100, 0, 0.05) 0%, var(--card-bg) 100%);
-    border: 1px solid rgba(0, 104, 55, 0.2);
-}
-
-.red-pill:hover {
-    border-color: var(--primary-red);
-    box-shadow: 0 10px 30px rgba(0, 104, 55, 0.15);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
 }
 
 .pill-icon {
-    font-size: 3.5rem;
-    margin-bottom: 24px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    font-size: 1.2rem;
+    color: #ffffff;
+    transition: all 0.3s ease;
 }
 
-.pill-icon.blue { color: #0088ff; }
-.pill-icon.red { color: var(--primary-red); } /* Now Green */
+.choice-card:hover .pill-icon {
+    border-color: #ffffff;
+    background: rgba(255,255,255,0.1);
+}
 
 .choice-card h3 {
-    font-family: var(--font-heading);
-    font-size: 2.5rem;
-    margin-bottom: 8px;
-    color: var(--text-white);
+    color: #ffffff;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    line-height: 1.1;
 }
 
 .choice-subtitle {
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--text-grey);
-    margin-bottom: 32px;
-    padding-bottom: 24px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.choice-list {
-    text-align: left;
-}
-
-.choice-list li {
-    padding: 12px 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    color: var(--text-grey);
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 1rem;
-}
-
-.choice-list li:last-child {
-    border-bottom: none;
-    margin-top: 16px;
-    color: var(--text-white);
-    font-weight: 700;
-}
-
-.choice-list li i {
-    width: 20px;
-    text-align: center;
+    color: #888;
     font-size: 0.9rem;
+    letter-spacing: 1px;
+    font-weight: 600;
 }
 
-.blue-pill .choice-list li i { color: #999; }
-.red-pill .choice-list li i { color: var(--primary-red); }
+/* Specific Hover Accents */
+.red-pill:hover { border-color: var(--primary-red); }
+.red-pill:hover .pill-icon { color: var(--primary-red); border-color: var(--primary-red); }
+
+.blue-pill:hover { border-color: #5A606B; } /* Grey/Blue hover */
+.blue-pill:hover .pill-icon { color: #ffffff; border-color: #ffffff; }
+
+/* Responsive Choice Grid */
+@media (max-width: 768px) {
+    .choice-grid {
+        grid-template-columns: 1fr;
+    }
+}
 
 /* =========================================
    SERVICES GRID
@@ -1190,10 +1153,17 @@ footer {
     
     .hero-grid { grid-template-columns: 1fr; text-align: center; }
     
+    /* Increase Top Padding to clear fixed header */
+    .hero-section {
+        padding-top: 140px; /* Increased from calc(header + 80px) */
+        padding-bottom: 80px;
+    }
+    
     /* Reduce Hero Title for Mobile */
     .hero-title { 
         font-size: 3.5rem; 
         line-height: 1.1;
+        margin-top: 20px; /* Extra margin for safety */
     }
     
     .hero-subtitle { margin: 0 auto 40px auto; }
@@ -1213,7 +1183,6 @@ footer {
     }
 
     /* Reduce Section Padding */
-    .hero-section,
     .services-section,
     .plans-section,
     .team-section,
@@ -1242,6 +1211,11 @@ footer {
         font-size: 0.8rem;
     }
 
+    /* Hero adjustments */
+    .hero-section {
+        padding-top: 130px; /* Ensure clearance */
+    }
+
     .hero-title { font-size: 2.5rem; } /* Even smaller for phones */
     
     .section-header h2 { font-size: 2.2rem; } /* Smaller section headers */
@@ -1252,8 +1226,19 @@ footer {
     
     .plan-card { padding: 30px 20px; } /* Less padding on mobile cards */
     
+    /* Contact Form Radio Buttons Fix */
+    .radio-group {
+        flex-direction: row; /* Keep row but ensure gap */
+        justify-content: flex-start;
+        gap: 30px !important; /* Force gap */
+    }
+    
+    .radio-group label {
+        font-size: 1rem;
+        white-space: nowrap; /* Prevent word break */
+    }
+    
     /* Further Reduce Section Padding for small screens */
-    .hero-section,
     .services-section,
     .plans-section,
     .team-section,
