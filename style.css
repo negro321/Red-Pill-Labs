@@ -514,6 +514,38 @@ h1, h2, h3 {
     padding: 100px 0;
     background: #f8f9fa; /* Slight grey contrast */
     border-top: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+    /* Diagonal Line Pattern */
+    background-image: repeating-linear-gradient(
+        45deg,
+        rgba(0, 0, 0, 0.02) 0px,
+        rgba(0, 0, 0, 0.02) 1px,
+        transparent 1px,
+        transparent 10px
+    );
+}
+
+/* Floating Geometric Ring */
+.choice-section::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    border: 1px solid rgba(138, 207, 89, 0.1);
+    border-radius: 50%;
+    z-index: 0;
+    pointer-events: none;
+    animation: rotate-ring 20s linear infinite;
+}
+
+@keyframes rotate-ring {
+    0% { transform: translate(-50%, -50%) rotate(0deg); border-radius: 40%; }
+    50% { transform: translate(-50%, -50%) rotate(180deg); border-radius: 50%; }
+    100% { transform: translate(-50%, -50%) rotate(360deg); border-radius: 40%; }
 }
 
 .choice-grid {
@@ -522,15 +554,17 @@ h1, h2, h3 {
     gap: 40px;
     max-width: 900px;
     margin: 0 auto;
+    position: relative;
+    z-index: 2; /* Ensure cards are above background */
 }
 
 .choice-card {
-    background: #0F1115; /* Dark Card */
+    background: #ffffff; /* White Card to match theme */
     border-radius: 12px;
     padding: 60px 40px;
     text-align: center;
     transition: all 0.3s ease;
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 1px solid var(--primary-red); /* Green border for all by default */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -538,52 +572,52 @@ h1, h2, h3 {
     text-decoration: none;
     position: relative;
     overflow: hidden;
+    /* Stronger green shadow visible by default */
+    box-shadow: 0 10px 30px rgba(138, 207, 89, 0.25); 
 }
 
 .choice-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    box-shadow: 0 20px 40px rgba(138, 207, 89, 0.3); /* Stronger green shadow on hover */
+    border-color: var(--primary-red);
 }
 
 .pill-icon {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    border: 1px solid rgba(255,255,255,0.2);
+    border: 1px solid var(--border-color);
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 30px;
     font-size: 1.2rem;
-    color: #ffffff;
+    color: var(--text-grey);
     transition: all 0.3s ease;
 }
 
 .choice-card:hover .pill-icon {
-    border-color: #ffffff;
-    background: rgba(255,255,255,0.1);
+    border-color: var(--primary-red);
+    background: var(--primary-red);
+    color: #ffffff;
 }
 
 .choice-card h3 {
-    color: #ffffff;
+    color: var(--text-black);
     font-size: 2rem;
     margin-bottom: 10px;
     line-height: 1.1;
 }
 
 .choice-subtitle {
-    color: #888;
+    color: var(--text-grey);
     font-size: 0.9rem;
     letter-spacing: 1px;
     font-weight: 600;
 }
 
-/* Specific Hover Accents */
-.red-pill:hover { border-color: var(--primary-red); }
-.red-pill:hover .pill-icon { color: var(--primary-red); border-color: var(--primary-red); }
-
-.blue-pill:hover { border-color: #5A606B; } /* Grey/Blue hover */
-.blue-pill:hover .pill-icon { color: #ffffff; border-color: #ffffff; }
+/* Remove specific blue/red classes to unify theme */
+.red-pill:hover, .blue-pill:hover { border-color: var(--primary-red); }
 
 /* Responsive Choice Grid */
 @media (max-width: 768px) {
@@ -868,8 +902,9 @@ footer {
 
 .footer-col.links.social-icons-only {
     flex-direction: row;
-    gap: 20px;
+    gap: 30px; /* Increased gap */
     align-items: center;
+    justify-content: center; /* Center align horizontally */
 }
 
 .footer-col.links.social-icons-only a {
